@@ -23,10 +23,30 @@ namespace Sube1.EmlakciLib
             this.semt = "Gazi";
         }
 
-        public int odasayisi;
+        private int odasayisi;
         public int katno;
         public string semt;
         public double alan;
+
+        public void SetOdaSayisi(int odasayisi)
+        {
+            //if (odasayisi < 0)
+            //{
+            //    this.odasayisi = -odasayisi;
+            //}
+            //else
+            //{
+            //    this.odasayisi = odasayisi;
+            //}
+
+            this.odasayisi = Math.Abs(odasayisi);
+        }
+
+        public int GetOdaSayisi()
+        {
+
+            return this.odasayisi;
+        }
 
         public string EvBilgileri()
         {
@@ -34,3 +54,5 @@ namespace Sube1.EmlakciLib
         }
     }
 }
+
+//Kapsülleme(Encapsulation) İlkesi: Class içerisinde yapılan işlemlerin class dışından gizlenmesi.Örn: SetOdaSayisi metoduna değer gönderildiğinde, bu metod aldığı değerin mutlka değerini alarak odasayisi field'ına atama yapıyor. Bu durum class dışından farkedilemiyor.
