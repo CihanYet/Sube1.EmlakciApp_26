@@ -12,7 +12,7 @@ namespace Sube1.EmlakciApp
 
             //int sayi = 5;//SET
             //Console.WriteLine(sayi);//GET
-
+            //evim.semt = "Gazi";
 
             Console.WriteLine(evim.GetOdaSayisi());
             //Console.WriteLine(evim.EvBilgileri());
