@@ -91,3 +91,41 @@ namespace Sube1.EmlakciLib
 }
 
 //Kapsülleme(Encapsulation) İlkesi: Class içerisinde yapılan işlemlerin class dışından gizlenmesi.Örn: SetOdaSayisi metoduna değer gönderildiğinde, bu metod aldığı değerin mutlka değerini alarak odasayisi field'ına atama yapıyor. Bu durum class dışından farkedilemiyor.
+
+//1- Metodlar
+//// İç içe yazılmaz
+//// Tekrar kullanılabilir
+//// İş yapmak için kullanılır
+//// Classların içinde tanımlanır
+//// ErişimBelirleyici GeriDonusTipi MetodAdi(param1,param2,....)
+//// Her metod parametre almak zorunda değil
+//// Parametre: Bir metodun işini yapabilmesi için gerekli veriler.
+//// Opsiyonel Parametre: Değer göndermek zorunda olmadığımız parametreler.Metoda değer gönderirken köşeli parantezler içinde gözükür. Aynı zamanda default değeri de gözükür.
+//// Geri dönüş yapmayan metodlar void tipi ile tanımlanır
+//// Method Overloading: Bir class içerisinde aynı isimli metodlar imzaları farklı olarak tanımlanabilir. 
+//// Metod imzası: Metodların aldığı parametrelerin sayısı ve veri tipleri. Metodlar için önemli tanımlayıcılardır.
+
+//.NET
+////Kütüphaneler
+////Programlama Dilleri (C#,VB,F#)
+////IDE(Visual Studio) Kod Editorü(VS Code)
+////.NET Framework - .NET(Core) - Xamarin
+////.NET Standart:TÜm .net frameworklerinde kullanılabilen bir .net framework'üdür. Örn. bir class library'i .net standart ile yaparsak diğer tüm framewroklerde kullanılabilir. NOT: Sürüm uyumu önemli
+//// C# App -> Derleme(Build) -> MS-IL -> Runtime ile derleme -> Binary(0-1)
+
+//Class
+//// Kod tekrarını engeller
+//// Nesne oluştururlur. Nesnelerin temelidir
+//// Bir nesnenin içereceği özellikleri ve davranışları belirler
+//// Bir classtan nesne olusturmak için new anahtar sözcüğü kullanılır.
+//// Nesneler belleğin HEAP alanında tutulur. Nesne referansları STACK bölgesinde
+
+//Constructor
+//// Default Constructor: Her classta vardır. public'dir. Class içinde tanımlanan field'lara varsayılan değerlerini atar.
+//// Constructor Overloading: Nesne türetilirken, fieldlara kendi istediğimiz değerleri atamak için kullanılabilir.
+//// Tanımlanması: Geri dönüş tipi yoktur.Adı class adıyla aynı olmalıdır.
+
+//Kapsülleme
+////Class içinde yapılan işlemlerin, class dışından gizlenmesidir. Güvenlik, bir fielda değer geldiğinde başka işlemler yapma vb. gibi sebeple kullanılır. 
+////Bu ilkeye göre fieldlar private olmalıdır.
+////Private fieldlara class dışından erişmek için, public 2 metod yazılır. GET ve SET metodları.
