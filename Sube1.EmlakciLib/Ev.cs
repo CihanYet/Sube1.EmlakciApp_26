@@ -8,7 +8,7 @@ namespace Sube1.EmlakciLib
     public class Ev
     {
         private static int sayac = 0;//static üyeler class'a aittir.
-        public static int Sayac { get => sayac;}
+        public static int Sayac { get => sayac; }
 
         public Ev()
         {
@@ -32,14 +32,14 @@ namespace Sube1.EmlakciLib
         }
 
         private int odasayisi;
-       
+
         private string semt;//field
         private double alan;
         private string buyukluk;
 
         public int Katno { get; set; }//Auto Property- Get ve set içerisinde işlem yapılamayacaksa kullanılır.
         public string Semt { get => semt; set => semt = value.ToUpper(); }//Property-Get ve set içinde tek satırlı işlem
-       
+
 
         public int Odasayisi//Full Property- Get ve Set içinde çok satırlı işlem imkanı
         {
@@ -57,7 +57,7 @@ namespace Sube1.EmlakciLib
             }
         }
 
-      
+
 
 
 
@@ -83,6 +83,10 @@ namespace Sube1.EmlakciLib
             }
             //50'den küçük olma durumu değerlendirilecek.
         }
+
+        public double GetAlan() => alan;
+
+        public string GetBuyukluk() => buyukluk;
 
         public void SetSemt(string semt) => this.Semt = semt.ToUpper();
         public string GetSemt() => this.Semt;

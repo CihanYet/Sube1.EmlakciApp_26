@@ -21,15 +21,25 @@ namespace Sube1.EmlakciApp
             // evim.Semt = "Gazi";
             // Console.WriteLine(evim.Semt);
 
-            
-            Ev evim = new Ev();
-          
-            Ev evim2 = new Ev();
-            Ev evim3 = new Ev(2, 2, 120);
 
-            Ev.Sayac = 5;
-           
-            Console.WriteLine($"Bellekteki Ev Sayısı:{Ev.Sayac}");
+            //Ev evim = new Ev();
+
+            //Ev evim2 = new Ev();
+            //Ev evim3 = new Ev(2, 2, 120);
+
+            //Ev.Sayac = 5;
+
+            //Console.WriteLine($"Bellekteki Ev Sayısı:{Ev.Sayac}");
+
+            var se = new SatilikEv();
+            se.Semt = "Gazi";
+            se.SetAlan(100);
+            se.Katno = 2;
+            se.Odasayisi = 3;
+            se.Satisfiyat = 100000;
+
+            Console.WriteLine(se.EvBilgileri());
+
         }
     }
 }
