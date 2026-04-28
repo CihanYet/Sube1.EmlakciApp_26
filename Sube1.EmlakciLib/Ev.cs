@@ -7,30 +7,59 @@ namespace Sube1.EmlakciLib
 {
     public class Ev
     {
+        private static int sayac = 0;//static üyeler class'a aittir.
+        public static int Sayac { get => sayac;}
+
         public Ev()
         {
-
+            sayac++;
         }
         public Ev(int odasayisi, int katno, string semt, double alan)
         {
-            this.odasayisi = odasayisi;
-            this.katno = katno;
-            this.semt = semt;
-            this.alan = alan;
+            sayac++;
+            this.Odasayisi = odasayisi;
+            this.Katno = katno;
+            this.Semt = semt;
+            this.SetAlan(alan);
         }
         public Ev(int odasayisi, int katno, double alan)
         {
+            sayac++;
             this.alan = alan;
             this.odasayisi = odasayisi;
-            this.katno = katno;
-            this.semt = "Gazi";
+            this.Katno = katno;
+            this.Semt = "Gazi";
         }
 
         private int odasayisi;
-        public int katno;
-        private string semt;
+       
+        private string semt;//field
         private double alan;
         private string buyukluk;
+
+        public int Katno { get; set; }//Auto Property- Get ve set içerisinde işlem yapılamayacaksa kullanılır.
+        public string Semt { get => semt; set => semt = value.ToUpper(); }//Property-Get ve set içinde tek satırlı işlem
+       
+
+        public int Odasayisi//Full Property- Get ve Set içinde çok satırlı işlem imkanı
+        {
+            get
+            {
+                return this.odasayisi;
+            }
+            set
+            {
+                this.odasayisi = Math.Abs(value);
+                if (odasayisi < 0)
+                {
+                    Log("Oda sayısı negatif girildi", @"C:\CihanHoca\Sube1Log.txt");
+                }
+            }
+        }
+
+      
+
+
 
         //Alan fieldına atanan değere göre buyukluk field'ına değerler atanacak.
         //50-75:Küçük ev
@@ -38,13 +67,13 @@ namespace Sube1.EmlakciLib
         //>120 : Büyük ev
 
         public void SetAlan(double alan)
-        {  
+        {
             this.alan = alan;
-            if (alan>50&&alan<75)
+            if (alan > 50 && alan < 75)
             {
                 this.buyukluk = "Küçük Ev";
             }
-            else if (alan>75&&alan<120)
+            else if (alan > 75 && alan < 120)
             {
                 this.buyukluk = "Orta Ev";
             }
@@ -55,8 +84,8 @@ namespace Sube1.EmlakciLib
             //50'den küçük olma durumu değerlendirilecek.
         }
 
-        public void SetSemt(string semt) => this.semt = semt.ToUpper();
-        public string GetSemt() => this.semt;
+        public void SetSemt(string semt) => this.Semt = semt.ToUpper();
+        public string GetSemt() => this.Semt;
 
 
 
@@ -74,7 +103,7 @@ namespace Sube1.EmlakciLib
         public string EvBilgileri()
         {
             Log("Ev bilgileri alındı", @"C:\CihanHoca\Sube1Log.txt");
-            return $"Oda Sayısı:{this.odasayisi}\nKat No:{this.katno}\nSemt:{this.semt}\nAlan:{this.alan}m2\nBüyüklük:{this.buyukluk}";
+            return $"Oda Sayısı:{this.odasayisi}\nKat No:{this.Katno}\nSemt:{this.Semt}\nAlan:{this.alan}m2\nBüyüklük:{this.buyukluk}";
         }
 
         public void Log(string msg, string path)
@@ -129,3 +158,5 @@ namespace Sube1.EmlakciLib
 ////Class içinde yapılan işlemlerin, class dışından gizlenmesidir. Güvenlik, bir fielda değer geldiğinde başka işlemler yapma vb. gibi sebeple kullanılır. 
 ////Bu ilkeye göre fieldlar private olmalıdır.
 ////Private fieldlara class dışından erişmek için, public 2 metod yazılır. GET ve SET metodları.
+///
+//static üyeler class'a aittir. Class adı ile erişilir.Program çalıştığı sürece bellekte kalır.

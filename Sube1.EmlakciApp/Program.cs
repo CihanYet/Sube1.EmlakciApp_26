@@ -6,17 +6,30 @@ namespace Sube1.EmlakciApp
     {
         static void Main(string[] args)
         {
-            var evim = new Ev();
-            Console.WriteLine("Oda sayısı giriniz:");
-           evim.SetOdaSayisi(int.Parse(Console.ReadLine()));
+            // var evim = new Ev();
+            // Console.WriteLine("Oda sayısı giriniz:");
+            //evim.SetOdaSayisi(int.Parse(Console.ReadLine()));
 
-            //int sayi = 5;//SET
-            //Console.WriteLine(sayi);//GET
-            //evim.semt = "Gazi";
+            // //int sayi = 5;//SET
+            // //Console.WriteLine(sayi);//GET
+            // //evim.semt = "Gazi";
 
-            Console.WriteLine(evim.GetOdaSayisi());
-            //Console.WriteLine(evim.EvBilgileri());
-            Console.ReadKey();
+            // Console.WriteLine(evim.GetOdaSayisi());
+            // //Console.WriteLine(evim.EvBilgileri());
+            // Console.ReadKey();
+
+            // evim.Semt = "Gazi";
+            // Console.WriteLine(evim.Semt);
+
+            
+            Ev evim = new Ev();
+          
+            Ev evim2 = new Ev();
+            Ev evim3 = new Ev(2, 2, 120);
+
+            Ev.Sayac = 5;
+           
+            Console.WriteLine($"Bellekteki Ev Sayısı:{Ev.Sayac}");
         }
     }
 }
