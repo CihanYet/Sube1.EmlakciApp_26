@@ -5,7 +5,7 @@ using System.IO;//Input/Output
 
 namespace Sube1.EmlakciLib
 {
-    public class Ev
+    public class Ev:Object
     {
         private static int sayac = 0;//static üyeler class'a aittir.
         public static int Sayac { get => sayac; }

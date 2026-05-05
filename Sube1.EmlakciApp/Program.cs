@@ -32,14 +32,34 @@ namespace Sube1.EmlakciApp
             //Console.WriteLine($"Bellekteki Ev Sayısı:{Ev.Sayac}");
 
             var se = new SatilikEv();
-            se.Semt = "Gazi";
+            se.Semt = "SatilikEv";
             se.SetAlan(100);
             se.Katno = 2;
             se.Odasayisi = 3;
             se.Satisfiyat = 100000;
 
-            Console.WriteLine(se.EvBilgileri());
+            var se2 = new SatilikEv(2, 3, "SatilikEv", 100, 1000000);
 
+            var ke = new KiralikEv(3, 2, "KiralikEv", 100, 500, 600);
+
+            var ke2 = new KiralikEv(2, 1, "KiralikEv", 120, 800, 900);
+
+            Ev[] evler = { se, se2, ke, ke2 };
+
+            for (int i = 0; i < evler.Length; i++)
+            {
+                if (evler[i] is SatilikEv)
+                {
+                    SatilikEv sev = (SatilikEv)evler[i];
+                    Console.WriteLine(sev.EvBilgileri());
+                }
+                else {
+                    KiralikEv kev = (KiralikEv)evler[i];
+                    Console.WriteLine(kev.EvBilgileri());
+                }
+                //Console.WriteLine(evler[i].EvBilgileri());
+                Console.WriteLine("---------------------");
+            }
         }
     }
 }

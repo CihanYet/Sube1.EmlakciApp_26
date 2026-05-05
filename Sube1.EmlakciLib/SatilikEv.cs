@@ -6,7 +6,26 @@ namespace Sube1.EmlakciLib
 {
     public class SatilikEv : Ev
     {
-        public int Satisfiyat { get; set; }
+        public SatilikEv()
+        {
+            
+        }
+
+        //public SatilikEv(int odasayisi,int katno,string semt,double alan,double satisfiyat)
+        //{
+        //    this.Satisfiyat = satisfiyat;
+        //    base.Odasayisi = odasayisi;
+        //    base.Katno = katno;
+        //    base.Semt = semt;
+        //    base.SetAlan(alan);
+        //}
+
+        public SatilikEv(int odasayisi, int katno, string semt, double alan, double satisfiyat):base(odasayisi,katno, semt, alan) 
+        {
+            this.Satisfiyat = satisfiyat;            
+        }
+
+        public double Satisfiyat { get; set; }
 
         public new string EvBilgileri()
         {
