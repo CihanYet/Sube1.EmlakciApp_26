@@ -104,7 +104,7 @@ namespace Sube1.EmlakciLib
 
         public int GetOdaSayisi() => this.odasayisi;
 
-        public string EvBilgileri()
+        public virtual string EvBilgileri()
         {
             Log("Ev bilgileri alındı", @"C:\CihanHoca\Sube1Log.txt");
             return $"Oda Sayısı:{this.odasayisi}\nKat No:{this.Katno}\nSemt:{this.Semt}\nAlan:{this.alan}m2\nBüyüklük:{this.buyukluk}";

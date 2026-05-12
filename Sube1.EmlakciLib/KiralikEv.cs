@@ -20,6 +20,11 @@ namespace Sube1.EmlakciLib
         public double Kira { get; set; }
         public double Depozito { get; set; }
 
-        public string EvBilgileri() => $"{base.EvBilgileri()}\nKira:{this.Kira}\nDepozito:{this.Depozito}";
+        //public string EvBilgileri() => $"{base.EvBilgileri()}\nKira:{this.Kira}\nDepozito:{this.Depozito}";
+
+        public override string EvBilgileri()
+        {
+            return $"{base.EvBilgileri()}\nKira:{this.Kira}\nDepozito:{this.Depozito}";
+        }
     }
 }

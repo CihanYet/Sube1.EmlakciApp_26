@@ -48,16 +48,17 @@ namespace Sube1.EmlakciApp
 
             for (int i = 0; i < evler.Length; i++)
             {
-                if (evler[i] is SatilikEv)
-                {
-                    SatilikEv sev = (SatilikEv)evler[i];
-                    Console.WriteLine(sev.EvBilgileri());
-                }
-                else {
-                    KiralikEv kev = (KiralikEv)evler[i];
-                    Console.WriteLine(kev.EvBilgileri());
-                }
-                //Console.WriteLine(evler[i].EvBilgileri());
+                //if (evler[i] is SatilikEv)
+                //{
+                //    SatilikEv sev = (SatilikEv)evler[i];
+                //    Console.WriteLine(sev.EvBilgileri());
+                //}
+                //else
+                //{
+                //    KiralikEv kev = (KiralikEv)evler[i];
+                //    Console.WriteLine(kev.EvBilgileri());
+                //}
+                Console.WriteLine(evler[i].EvBilgileri());
                 Console.WriteLine("---------------------");
             }
         }
